@@ -24,6 +24,7 @@ body {
 
 header {
   @include flexCenter;
+  z-index: 99;
   position: sticky;
   top: 0;
   width: 100%;
@@ -59,7 +60,7 @@ h1 {
   }
 }
 .hero_section {
-  min-height: 100vh;
+  min-height: 200vh;
   @include flexCenter;
   background-image: linear-gradient(180deg, $primary, $seconday, transparent);
   .hero_wrapper {
