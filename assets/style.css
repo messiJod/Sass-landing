@@ -14,9 +14,6 @@
 * ::-webkit-scrollbar-thumb {
   background-color: #a872da;
 }
-* ::-webkit-scrollbar-thumb:hover {
-  background-color: white;
-}
 
 body {
   min-height: 100vh;
@@ -50,7 +47,7 @@ header nav .links {
   border-radius: 4px;
 }
 header nav .links:hover {
-  background-color: #000;
+  background-color: #b78ae0;
   color: white;
   transition: 0.3s all;
 }
@@ -122,6 +119,25 @@ h1 img {
 
 .languages {
   margin-block: 0.5em;
+}
+
+.gallery {
+  min-height: 100vh;
+}
+.gallery h2 {
+  text-align: center;
+  font-size: 3em;
+  background-color: #a872da;
+}
+.gallery ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 0.5em;
+  row-gap: 0em;
+}
+.gallery ul li {
+  margin: 1em 1em;
 }
 
 .footer {

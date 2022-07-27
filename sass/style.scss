@@ -24,11 +24,9 @@ $secondary: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
     background-color: $primary;
-  }
-  ::-webkit-scrollbar-thumb {
-    &:hover {
-      background-color: white;
-    }
+    // &:hover {
+    //   // background-color: white;
+    // }
   }
 }
 
@@ -57,7 +55,8 @@ header {
       cursor: pointer;
       border-radius: 4px;
       &:hover {
-        background-color: $black;
+        // background-color: $black;
+        background-color: lighten($primary, 6);
         color: white;
         transition: 0.3s all;
       }
@@ -125,6 +124,31 @@ h1 {
 
 .languages {
   margin-block: 0.5em;
+}
+
+.gallery {
+  // border: 2px solid $black;
+  min-height: 100vh;
+  h2 {
+    text-align: center;
+    font-size: 3em;
+    background-color: $primary;
+  }
+  ul {
+    // padding: 2px;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 0.5em;
+    row-gap: 0em;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // gap: 0.2em 0.5em;
+    li {
+      margin: 1em 1em;
+    }
+  }
 }
 
 .footer {
