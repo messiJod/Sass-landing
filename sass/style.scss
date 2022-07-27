@@ -10,11 +10,13 @@ $secondary: rgb(218, 218, 76);
 $black: #000;
 $primary: #a872da;
 $secondary: #ffffff;
+$primary: rgb(55, 121, 207);
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   font-family: Quicksand;
   ::-webkit-scrollbar {
     width: 10px;
@@ -34,26 +36,25 @@ body {
   min-height: 100vh;
 }
 
-header {
+.header {
   @include flexCenter;
-  z-index: 99;
+  z-index: 3;
   position: sticky;
   top: 0;
-  width: 100%;
-  height: 4.5em;
-  padding-block: 2em;
   background-color: rgba($color: $primary, $alpha: 1);
   color: $secondary;
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
   overflow: hidden;
-  nav {
+  .nav {
     @include flexCenter;
     .links {
+      text-decoration: none;
+      color: $secondary;
       padding: 0.7em 1.5em;
       margin-inline: 2em;
-      cursor: pointer;
       border-radius: 4px;
+      display: inline-block;
       &:hover {
         // background-color: $black;
         background-color: lighten($primary, 6);
@@ -63,6 +64,11 @@ header {
     }
   }
 }
+// .progress {
+//   width: 100vw;
+//   height: 5px;
+//   background-color: $secondary;
+// }
 
 h1 {
   @include flexCenter;
@@ -76,30 +82,33 @@ h1 {
   min-height: 100vh;
   @include flexCenter;
   background-image: linear-gradient(180deg, $primary, $secondary, transparent);
-  .hero_wrapper {
-    position: relative;
-    .card {
-      cursor: pointer;
-      font-size: 32px;
-      text-align: center;
-      padding: 0.5em;
-      width: 10em;
-      border-radius: 8px;
-      aspect-ratio: 2;
-      background-color: rgba(255, 255, 255, 0.706);
-      border: 1px solid white;
-      transition: 0.3s all;
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 5px 3px $secondary;
-      }
+}
+
+.hero_wrapper {
+  position: relative;
+  .card {
+    cursor: pointer;
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em;
+    width: 10em;
+    border-radius: 8px;
+    aspect-ratio: 2;
+    background-color: rgba(255, 255, 255, 0.706);
+    border: 1px solid white;
+    transition: 0.3s all;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 5px 3px lighten($primary, 50);
     }
   }
 }
 
 .card_header {
-  font-size: 20px;
-  font-weight: 500;
+  font: {
+    size: 20px;
+    weight: 500;
+  }
   margin-bottom: 1em;
 }
 .card_body {
@@ -127,12 +136,16 @@ h1 {
 }
 
 .gallery {
-  // border: 2px solid $black;
-  min-height: 100vh;
+  border-bottom: 2px solid $primary;
+  min-height: 80vh;
   h2 {
     text-align: center;
     font-size: 3em;
     background-color: $primary;
+    color: $secondary;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   ul {
     // padding: 2px;
@@ -147,6 +160,9 @@ h1 {
     // gap: 0.2em 0.5em;
     li {
       margin: 1em 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
