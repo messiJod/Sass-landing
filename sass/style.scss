@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-@mixin flexCenter {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+// @mixin flexCenter {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// }
 $primary: #b21901;
 $secondary: rgb(218, 218, 76);
 $black: #000;
@@ -14,10 +14,7 @@ $primary: rgb(55, 121, 207);
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
-  font-family: Quicksand;
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -34,10 +31,19 @@ $primary: rgb(55, 121, 207);
 
 body {
   min-height: 100vh;
+  // min-width: 100vw;
+  min-width: fit-content;
+  margin: 0;
+  padding: 0;
+  font-family: Quicksand;
 }
 
 .header {
-  @include flexCenter;
+  // @include flexCenter;
+  height: 4.5em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   z-index: 3;
   position: sticky;
   top: 0;
@@ -47,7 +53,10 @@ body {
   text-transform: uppercase;
   overflow: hidden;
   .nav {
-    @include flexCenter;
+    // @include flexCenter;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     .links {
       text-decoration: none;
       color: $secondary;
@@ -71,7 +80,10 @@ body {
 // }
 
 h1 {
-  @include flexCenter;
+  // @include flexCenter;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   img {
     width: 80px;
     aspect-ratio: 1;
@@ -80,27 +92,29 @@ h1 {
 }
 .hero_section {
   min-height: 100vh;
-  @include flexCenter;
+  width: 100%;
+  margin: 0 auto;
+  // @include flexCenter;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-image: linear-gradient(180deg, $primary, $secondary, transparent);
 }
 
-.hero_wrapper {
-  position: relative;
-  .card {
-    cursor: pointer;
-    font-size: 2em;
-    text-align: center;
-    padding: 0.5em;
-    width: 10em;
-    border-radius: 8px;
-    aspect-ratio: 2;
-    background-color: rgba(255, 255, 255, 0.706);
-    border: 1px solid white;
-    transition: 0.3s all;
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 5px 3px lighten($primary, 50);
-    }
+.card {
+  cursor: pointer;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+  width: 10em;
+  border-radius: 8px;
+  aspect-ratio: 2;
+  background-color: rgba(255, 255, 255, 0.706);
+  border: 1px solid white;
+  transition: 0.3s all;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px 3px lighten($primary, 50);
   }
 }
 
@@ -134,6 +148,17 @@ h1 {
 .languages {
   margin-block: 0.5em;
 }
+section {
+  &.testimonial,
+  &.aboutus,
+  &.pricing {
+    min-height: 100vh;
+    h2 {
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+}
 
 .gallery {
   border-bottom: 2px solid $primary;
@@ -143,21 +168,20 @@ h1 {
     font-size: 3em;
     background-color: $primary;
     color: $secondary;
-    position: sticky;
-    top: 0;
     z-index: 10;
   }
   ul {
     // padding: 2px;
     list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    column-gap: 0.5em;
-    row-gap: 0em;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: center;
+    // display: grid;
+    // grid-template-columns: repeat(8, 1fr);
+    // column-gap: 0.5em;
+    // row-gap: 0em;
     // gap: 0.2em 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
     li {
       margin: 1em 1em;
       display: flex;
