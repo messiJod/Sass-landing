@@ -15,17 +15,20 @@
 
 body {
   min-height: 100vh;
-  min-width: fit-content;
   margin: 0;
   padding: 0;
   font-family: Quicksand;
 }
 
+.body_wrapper {
+  width: 100%;
+}
+
 .header {
-  height: 4.5em;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 4.5em;
   z-index: 3;
   position: sticky;
   top: 0;
@@ -35,12 +38,25 @@ body {
   text-transform: uppercase;
   overflow: hidden;
 }
+.header h1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.header h1 img {
+  width: 80px;
+  aspect-ratio: 1;
+  mix-blend-mode: multiply;
+}
 .header .nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex: 1 1 auto;
 }
 .header .nav .links {
+  flex: 1 1 auto;
   text-decoration: none;
   color: #ffffff;
   padding: 0.7em 1.5em;
@@ -52,17 +68,6 @@ body {
   background-color: #508ad5;
   color: white;
   transition: 0.3s all;
-}
-
-h1 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-h1 img {
-  width: 80px;
-  aspect-ratio: 1;
-  mix-blend-mode: multiply;
 }
 
 .hero_section {

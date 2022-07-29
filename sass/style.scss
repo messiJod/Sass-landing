@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-// @mixin flexCenter {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
+@mixin flexAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 $primary: #b21901;
 $secondary: rgb(218, 218, 76);
 $black: #000;
@@ -32,18 +32,18 @@ $primary: rgb(55, 121, 207);
 body {
   min-height: 100vh;
   // min-width: 100vw;
-  min-width: fit-content;
+  // min-width: fit-content;
   margin: 0;
   padding: 0;
   font-family: Quicksand;
 }
+.body_wrapper {
+  width: 100%;
+}
 
 .header {
-  // @include flexCenter;
+  @include flexAround;
   height: 4.5em;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   z-index: 3;
   position: sticky;
   top: 0;
@@ -52,12 +52,20 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   overflow: hidden;
+  h1 {
+    @include flexAround;
+    flex: 1 1 auto;
+    img {
+      width: 80px;
+      aspect-ratio: 1;
+      mix-blend-mode: multiply;
+    }
+  }
   .nav {
-    // @include flexCenter;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include flexAround;
+    flex: 1 1 auto;
     .links {
+      flex: 1 1 auto;
       text-decoration: none;
       color: $secondary;
       padding: 0.7em 1.5em;
@@ -79,25 +87,11 @@ body {
 //   background-color: $secondary;
 // }
 
-h1 {
-  // @include flexCenter;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  img {
-    width: 80px;
-    aspect-ratio: 1;
-    mix-blend-mode: multiply;
-  }
-}
 .hero_section {
   min-height: 100vh;
   width: 100%;
   margin: 0 auto;
-  // @include flexCenter;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include flexAround;
   background-image: linear-gradient(180deg, $primary, $secondary, transparent);
 }
 
